@@ -5,14 +5,25 @@ public class PokerHand {
 	private String blinds;
 	private String tableName;
 	private String Time;
+	private String seat1;
+	private String seat2;
+	private String seat3;
+	private String seat4;
+	private String seat5;
+	private String seat6;
 	
-	public PokerHand(int handNumber, String blinds, String tableName, String time)
+	public PokerHand(int handNumber, String blinds, String tableName, String time, String seat1, String seat2, String seat3, String seat4, String seat5, String seat6)
 	{
 		this.handNumber = handNumber;
 		this.blinds = blinds;
 		this.tableName = tableName;
 		this.Time = time;
-		
+		this.seat1 = seat1;
+		this.seat2 = seat2;
+		this.seat3 = seat3;
+		this.seat4 = seat4;
+		this.seat5 = seat5;
+		this.seat6 = seat6;
 		
 		
 	}

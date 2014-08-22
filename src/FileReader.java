@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class FileReader {
 	Scanner input;
 	private static ArrayList<String> textData = new ArrayList<String>();
+	private String lineFromTextData;
 	
 	public void openFile(String filename)
 	{
@@ -82,4 +83,17 @@ public class FileReader {
 	      }
 		closeFileAfterUse();
 	}
+	
+	public ArrayList getTextData()
+	{
+		return textData;
+	}
+	
+	public String getLineFromTextData(int i)
+	{
+		lineFromTextData = textData.get(i);
+		
+		return lineFromTextData;
+	}
+	
 }
