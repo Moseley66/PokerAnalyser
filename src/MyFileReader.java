@@ -10,6 +10,7 @@ import java.util.ArrayList;
 public class MyFileReader {
 	private static ArrayList<String> textData = new ArrayList<String>();
 	private int line;
+	private String handNumber;
 	
 	public void getHandHistory()
 	{
@@ -34,25 +35,28 @@ public class MyFileReader {
 			i.printStackTrace();
 		}
 		
+		System.out.println(getHandNumber("11#"));
+		
+		
 		for(String part : textData)
 		{ 
 			//System.out.println(part);
 			
 			
-			//PokerHandNumbers
-			   if (part.contains("#11") == true)
-		    {
-				   String[] parts = part.split(" ");
-				   
-				   
-				   String partingHand = parts[2];
-//				   for (String parting : parts)
-//				   {
-//				   System.out.println(parting);
-//				   }
-				   
-				   System.out.println(partingHand);
-			}
+//			//PokerHandNumbers
+//			   if (part.contains("#11") == true)
+//		    {
+//				   String[] parts = part.split(" ");
+//				   
+//				   
+//				   String partingHand = parts[2];
+////				   for (String parting : parts)
+////				   {
+////				   System.out.println(parting);
+////				   }
+//				   
+//				   System.out.println(partingHand);
+//			}
 			   
 			   // Blinds
 			   
@@ -208,13 +212,44 @@ public class MyFileReader {
 //			   System.out.println(partingHand);
 //		}
 	
-	public int getHandNumber(String marker)
+	public String getHandNumber(String marker)
 	   {
-		   int handNumber = 0;
 		   
-		   return handNumber;
+		   
+		   for(String part : textData)
+			{ 
+				//System.out.println(part);
+				
+					//PokerHandNumbers
+				   if (part.contains(marker) == true)
+			    {
+					   String[] parts = part.split(" ");
+					   
+					   
+					   String partingHand = parts[2];
+//					   for (String parting : parts)
+//					   {
+//					   System.out.println(parting);
+//					   }
+					   setHandNumber(partingHand);
+					   System.out.println(partingHand);
+					   
+				}
+				   
+			}
+		   return getHandNumber();
+		   
+		   
 	   }
 	
+	public String getHandNumber() {
+		return handNumber;
+	}
+
+	public void setHandNumber(String handNumber) {
+		this.handNumber = handNumber;
+	}
+
 	public int getLineNumbers()
 	{
 		try
